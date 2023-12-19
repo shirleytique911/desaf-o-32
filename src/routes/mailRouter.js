@@ -16,13 +16,13 @@ const transporter = nodemailer.createTransport({
 
 router.post("/enviar-correo", (req, res) => {
     const { email, mensaje } = req.body; // Cambia 'correo' a 'email' para mantener la consistencia
-    const messageToSend = mensaje; // Utiliza el mensaje del cuerpo de la solicitud
+    const messageToSend = mensaje; 
 
     const mailOptions = {
         from: "tucorreo@gmail.com",
         to: email, // Utiliza el correo ingresado en el formulario como destinatario
         subject: "Mensaje después del login",
-        text: messageToSend // Mensaje personalizado para el usuario
+        text: messageToSend 
     };
 
     transporter.sendMail(mailOptions, (error, info) => {

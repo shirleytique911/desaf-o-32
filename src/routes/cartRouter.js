@@ -4,7 +4,7 @@ const passport =  require("passport");
 const { initializePassport, checkRole } = require("../config/passport.config.js");
 const cartsControllers = require("../controllers/carts.controllers.js");
 
-/* router.get("/api/carts/:cid", cartsControllers.getCartById); */ //obtener un carritoporid SE MODIFICA PARA QUE LA FUNCION ESTE EN EL DAO
+
 router.get("/api/carts", cartsControllers.getAllCarts); //obtener todos los carritos
 router.post("/api/carts", cartsControllers.createCart); //crearuncarrito
 router.post("/api/carts/:cid/products", passport.authenticate('current', { session: false }), checkRole('user'), cartsControllers.addProductsToCart); //agregar un producto especifico al carrito

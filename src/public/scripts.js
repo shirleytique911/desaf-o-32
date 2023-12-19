@@ -25,12 +25,14 @@ socket.on('deleteProduct', (id) => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // EVENTO ENVIAR FORMULARIO REGISTRO
+
+  
   console.log("DOMContentLoaded se ha ejecutado correctamente.");
   
   //EVENTO BOTON DETALLE
-  // busca los botones con clase detalle-buton
+  
   const detalleButtons = document.querySelectorAll(".detalle-button");
+  
   // agregar un evenlistener
   detalleButtons.forEach((button) => {
     

@@ -27,32 +27,7 @@ class CartDao {
 
 
 
-    // trae el carrito pero los producto solo los id
-    /* async getCartById(cartId) {
-        try {
-            console.log("Searching cart with ID:", cartId); // Verifica si se está buscando el carrito con el ID correcto
-    
-            const cart = await cartModel.findOne({ _id: cartId }).populate("products").lean();
-            console.log("Found cart:", cart); // Verifica si se encontró el carrito
-    
-            return cart;
-        } catch (error) {
-            console.error("Error en getCartById:", error); // Manejo de errores
-            return null;
-        }
-    } */
-
-    //traeruncarrito por id mediante postman
-    /* async getCartById(cartId) {
-        try {
-            const cart = await cartModel.findById(cartId).populate("products").lean();
-            return cart;
-        } catch (error) {
-            console.error(error);
-            return null;
-        }
-    }
- */
+  
     async getAllCarts() {
         try {
             const carts = await cartModel.find();
@@ -107,30 +82,6 @@ class CartDao {
             return { success: false, message: 'Error al agregar productos al carrito con cantidad' };
         }
     }
-
-    /* async addProductToCart(cartId, productIds) {
-        try {
-            const cart = await cartModel.findById(cartId);
-            if (!cart) {
-                return { success: false, message: 'Carrito no encontrado' };
-            }
-            
-            const products = await productModel.find({ _id: { $in: productIds } });
-            if (products.length !== productIds.length) {
-                return { success: false, message: 'Uno o varios productos no se encontraron' };
-            }
-    
-            // Agregar los IDs de los productos al carrito
-            cart.products.push(...productIds);
-            await cart.save();
-    
-            return { success: true, message: 'Producto(s) agregado(s) al carrito' };
-        } catch (error) {
-            console.error(error);
-            return { success: false, message: 'Error al agregar producto(s) al carrito' };
-        }
-    } */
-    // ALPARECER esta funcion esta demas se debe realizar en caso de repetir el producto agregado la verificacion en addproduct
     async updateProductQuantity(cartId, productId, newQuantity) {
         try {
             const cart = await cartModel.findById(cartId);

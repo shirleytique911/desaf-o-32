@@ -9,8 +9,7 @@ const userDao = new UserDao();
 
 
 async function getUserByEmail(email) {
-  // Aquí debes escribir la lógica para buscar un usuario por su correo electrónico en la base de datos
-  // Puedes usar un modelo de Mongoose para interactuar con tu base de datos
+ 
   const user = await userModel.findOne({ email }); // Suponiendo que tienes un modelo llamado 'User'
 
   return user; // Devuelves el usuario encontrado (o null si no se encontró)
@@ -105,9 +104,7 @@ async function loginUser(req, res) {
 
     console.log("token desde usercontrolers",token)
     console.log(user)
-    /* const userDTO = new UserDTO(user);
-    console.log(userDTO);  */
-
+  
     res.status(200).json({ token, userCart });
   } catch (error) {
     res.status(500).json({ error: "Error al ingresar " + error.message });

@@ -14,42 +14,32 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ddd; /* Borde suave */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 15px;
-    margin: 15px;
-    background-color: #fff; /* Fondo blanco */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sutil sombra */
-    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+    border: 1px solid #ddd; 
+    border-radius: 8px;
+   
   }
   
   .product:hover {
-    transform: scale(1.05); /* Escala ligeramente al pasar el ratón */
+    transform: scale(1.05);
   }
   
   .product h2 {
-    font-size: 1.5rem; /* Tamaño de fuente ligeramente más grande */
+    font-size: 1.5rem; 
     color: #333;
-    margin-bottom: 5px; /* Pequeño espacio inferior */
+    margin-bottom: 5px; 
   }
   
   .product p {
     font-size: 1rem;
-    color: #666; /* Texto gris */
-    margin-bottom: 10px; /* Mayor espacio inferior */
+    margin-bottom: 10px; 
   }
   
   .product button {
-    background-color: #6a5acd; /* Color morado inspirado en piedras preciosas */
+    background-color: #6a5acd; 
     color: #fff;
     border: none;
     padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+
   }
   
-  .product button:hover {
-    background-color: #4b0082; /* Color morado más oscuro al pasar el ratón */
-  }
-  
+ 

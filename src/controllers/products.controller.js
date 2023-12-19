@@ -8,8 +8,7 @@ const productDao = new ProductDao();
 // funcion para obtener todos los productos
 const getProducts = async (req, res) => {
     try {
-        // obtiene parametros de consulta (query parameters)
-        // Aquí se extraen tres parámetros: page, limit, y sortBy.
+   
         const page = parseInt(req.query.page) || 1;
         const limit = parseInt(req.query.limit) || 20;
         const sortBy = req.query.sortBy || "price";
@@ -121,19 +120,7 @@ const saveProduct = async (req, res) => {
     }
 };
 
-//SAVEPRODUCT ANTIGUO EN CASO DE ERROR
-/* const saveProduct = async (req, res) => {
-    const newProduct = req.body;
-    try {
-        const result = await productDao.saveProduct(newProduct);
-        res.json({ status: "success producto creado", result: result });
-    } catch (error) {
-        console.log(error);
-        res.status(500).send({ status: "error", error: "Algo salio mal intenta mas tarde" });
-    }
-}; */
 
-// actualizar un producto especifico segun id
 const updateProduct = async (req, res) => {
     const productId = req.params.id;
     const updatedProduct = req.body;

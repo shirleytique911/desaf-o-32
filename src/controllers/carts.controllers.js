@@ -164,50 +164,7 @@ async function addProductsToCart(req, res) {
 }
 
 
-//FUNCION PARA AGREGAR VARIOS PRODUCTOS AL CARRITO (respaldo)
-/* async function addProductsToCart(req, res) {
-    try {
-        const cartId = req.params.cid;
-        const products = req.body; // Espera un array de productos
-        
 
-        // Verifica si products es un array y no está vacío
-        if (!Array.isArray(products) || products.length === 0) {
-            return res.status(400).json({ message: "Formato de productos no válido" });
-        }
-
-        // Verifica cada producto del array
-        for (const product of products) {
-            const { productId, quantity } = product;
-            if (quantity < 1) {
-                return res.status(400).json({ message: "La cantidad debe ser 1 o más" });
-            }
-        }
-
-        // Llama a la función de DAO para agregar productos al carrito
-        const result = await cartDao.addProductsToCart(cartId, products);
-        return res.json(result);
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ status: "error", error: error.message });
-    }
-} */
-
-//para agregar un solo producto al carrito
-/* async function addProductToCart(req, res) {
-    try {
-        // en la logica se obtiene el id del carrito + id del producto especifico y se agrega el producto al carrito si todo funciona bien 
-        const cartId = req.params.cid;
-        const productIds = req.body.productIds;
-        const result = await cartDao.addProductToCart(cartId, productIds);
-        return res.json(result);
-    } catch (error) {
-        console.error(error);
-        return res.status(500).json({ status: "error", error: "tenemos un 33-12" });
-    }
-} */
-
-// contador (cantidad) de un producto en un carrito
 async function updateProductQuantity(req, res) {
     try {
         const cartId = req.params.cid;
