@@ -30,7 +30,7 @@ const app = express()
 const server = http.createServer(app)
 const io = new Server(server)
 global.io = io;
-const PORT = 8000
+const PORT = 8080
 
 
 //MIDDLEWARES
